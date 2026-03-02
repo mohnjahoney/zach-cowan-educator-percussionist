@@ -57,16 +57,26 @@
 
   /* Option B: Muted Clay + Charcoal */
   [data-palette="B"] {
-    --background: 35 30% 96%;
+    /* --background: 35 30% 96%; */
+    --background: 32 42% 94%;
+    /* --foreground: 220 10% 20%; */
     --foreground: 220 10% 20%;
-
+    
     --card: 35 22% 93%;
     --card-foreground: 220 10% 20%;
 
     --popover: 35 30% 96%;
     --popover-foreground: 220 10% 20%;
 
-    --primary: 220 10% 20%;
+    /* --primary: 220 10% 20%; */
+    /* --primary: 22 55% 48%; */
+    /* --primary: 20 25% 46%; */
+    
+    /* clay */
+    /* --primary: 15 41% 51%; */ 
+    --primary: 15 45% 40%;
+    /* --primary: 18 35% 46%; */
+
     --primary-foreground: 35 30% 96%;
 
     --secondary: 30 12% 88%;
