@@ -31,7 +31,7 @@ const HeroSection = () => (
       {/* <div className="mx-auto h-56 w-56 overflow-hidden rounded-full ring-4 ring-primary/20 md:h-64 md:w-64"> */}
       <div className="mx-auto h-64 w-64 overflow-hidden rounded-2xl md:h-72 md:w-72">
         <img
-          src="/images/zach-portrait.jpg"
+          src="images/zach-portrait.jpg"
           alt="Zach portrait"
           className="h-full w-full object-cover"
         />
