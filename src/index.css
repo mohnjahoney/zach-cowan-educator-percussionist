@@ -58,14 +58,14 @@
   /* Option B: Muted Clay + Charcoal */
   [data-palette="B"] {
     /* --background: 35 30% 96%; */
-    --background: 32 42% 94%;
+    --background: 40 14% 96%;
     /* --foreground: 220 10% 20%; */
     --foreground: 220 10% 20%;
-    
-    --card: 35 22% 93%;
+
+    --card: 40 12% 94%;
     --card-foreground: 220 10% 20%;
 
-    --popover: 35 30% 96%;
+    --popover: 40 14% 96%;
     --popover-foreground: 220 10% 20%;
 
     /* --primary: 220 10% 20%; */
@@ -74,10 +74,12 @@
     
     /* clay */
     /* --primary: 15 41% 51%; */ 
-    --primary: 15 45% 40%;
+    /* --primary: 15 45% 40%; */
     /* --primary: 18 35% 46%; */
-
-    --primary-foreground: 35 30% 96%;
+    --primary: var(--accent);
+    
+    /* --primary-foreground: 35 30% 96%; */
+    --primary-foreground: var(--accent-foreground);
 
     --secondary: 30 12% 88%;
     --secondary-foreground: 220 10% 20%;
@@ -85,15 +87,42 @@
     --muted: 30 10% 85%;
     --muted-foreground: 220 6% 45%;
 
-    --accent: 15 35% 50%;
-    --accent-foreground: 35 30% 96%;
+    /* Accent — purple / mauve / purple-gray, pulled from the sycamore bark */
+    /* Option 1: Dusty Plum (soft, muted mauve-gray) — active */
+    /* --accent: 300 15% 42%; */
+    /* --accent-foreground: 40 14% 96%; */
+
+    /* Option 2: Aubergine (deeper, richer plum) */
+    /* --accent: 290 28% 34%; */
+    /* --accent-foreground: 40 14% 96%; */
+
+    /* Option 3: Purple-Gray (closest to the grayish-lavender bark patches) */
+    /* --accent: 270 10% 46%; */
+    /* --accent-foreground: 40 14% 96%; */
+
+    /* Option 4: Eucalyptus leaf */
+    /* --accent: 131.76 22.27% 55.1%; */
+    /* --accent-foreground: 290.76 10.27% 98.1%; */
+
+    /* Option 5: Eucalyptus */
+    /* --accent: 106.67 20.55% 57.06%; */
+    /* --accent-foreground: 290.76 10.27% 98.1%; */
+
+    /* Option 6: From bio pic leaf */
+    /* --accent: 109 23% 46%; */
+    /* --accent-foreground: 290.76 10.27% 100%; */
+
+    /* Option 7: Leaf Green (fresher, less olive than Option 6) — active */
+    --accent: 130 28% 40%;
+    --accent-foreground: 290.76 10.27% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 30 12% 82%;
     --input: 30 12% 82%;
-    --ring: 15 35% 50%;
+    /* --ring is aliased to --accent so it never falls out of sync */
+    --ring: var(--accent);
 
     --radius: 0.5rem;
   }
@@ -113,5 +142,9 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
+    /* Mostly dark foreground, with a light tint pulled from whichever
+       --accent is active. Adjust the 85/15 split to dial the tint up
+       or down; push it toward 100/0 to remove the tint entirely. */
+    color: color-mix(in srgb, hsl(var(--foreground)) 85%, hsl(var(--accent)) 15%);
   }
 }

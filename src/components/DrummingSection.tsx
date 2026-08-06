@@ -8,33 +8,32 @@ const offerings = [
 ];
 
 const DrummingSection = () => (
-  <section id="drumming" className="border-t px-6 py-20">
+  <section id="drumming" className="px-6 py-14">
     <div className="mx-auto max-w-4xl space-y-10">
       <div className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-          Drumming &amp; Rhythm Instruction
-        </h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+        <div className="flex items-center gap-4">
+          <h2 className="whitespace-nowrap text-3xl font-bold tracking-tight md:text-4xl">
+            Drumming &amp; Rhythm Instruction
+          </h2>
+        </div>
+        <p className="text-base leading-relaxed text-muted-foreground">
           Trained over 20 years with Cuban, Brazilian, and West African musicians.<br />
           Apprenticed with master musicians including [Name1], [Name2], and [Name3].
         </p>
       </div>
 
-      <ul className="grid gap-2 text-foreground">
+      <ul className="grid gap-3 border-l-2 border-accent pl-4 text-base text-foreground">
         {offerings.map((item) => (
-          <li key={item} className="flex items-start gap-3">
-            <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-            <span>{item}</span>
-          </li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
 
-      <p className="text-lg font-medium italic text-muted-foreground">
+      <p className="text-xl font-medium italic text-muted-foreground">
         Rhythm as culture, history, and living community practice.
       </p>
 
       <div className="space-y-2">
-        <p className="text-sm font-medium text-muted-foreground">
+        <p className="text-base font-medium text-muted-foreground">
           Drumming in Practice
         </p>
 

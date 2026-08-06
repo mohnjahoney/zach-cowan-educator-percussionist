@@ -5,27 +5,26 @@ const offerings = [
   "Structured homeschool learning guidance",
   "One-on-one or small group sessions",
   "In-person in Chico or online",
-  "Starting at $60/hour",
+  "Starting at $50/hour (ask about group rates)",
 ];
 
 const MathSection = () => (
-  <section id="math" className="border-t px-6 py-20">
+  <section id="math" className="px-6 py-14">
     <div className="mx-auto max-w-4xl space-y-10">
-      <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-        Mathematics &amp; Homeschool Support
-      </h2>
+      <div className="flex items-center gap-4">
+        <h2 className="whitespace-nowrap text-3xl font-bold tracking-tight md:text-4xl">
+          Mathematics &amp; Homeschool Support
+        </h2>
+      </div>
 
-      <ul className="grid gap-2 text-foreground">
+      <ul className="grid gap-3 border-l-2 border-accent pl-4 text-base text-foreground">
         {offerings.map((item) => (
-          <li key={item} className="flex items-start gap-3">
-            <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-            <span>{item}</span>
-          </li>
+          <li key={item}>{item}</li>
         ))}
       </ul>
 
-      <p className="text-lg font-medium italic text-muted-foreground">
-        Clear structure. Patient guidance. Lasting confidence.
+      <p className="text-xl font-medium italic text-muted-foreground">
+        In-person in Chico or online. One-on-one or small group.
       </p>
 
       <div className="grid gap-6 md:grid-cols-2">

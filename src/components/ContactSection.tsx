@@ -18,17 +18,19 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="border-t px-6 py-20">
+    <section id="contact" className="px-6 py-14">
       <div className="mx-auto max-w-4xl space-y-10">
-        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Get in Touch</h2>
+        <div className="flex items-center gap-4">
+          <h2 className="whitespace-nowrap text-3xl font-bold tracking-tight md:text-4xl">Get in Touch</h2>
+        </div>
 
-        <p className="max-w-xl leading-relaxed text-muted-foreground">
+        <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
           Tell me what you're looking for — math support, drumming lessons, or a workshop — and I'll reply with a simple next step.
         </p>
 
         <div className="grid gap-12 md:grid-cols-2">
           {/* Contact info */}
-          <div className="space-y-5 text-sm">
+          <div className="space-y-5 text-base">
             <div className="flex items-center gap-3 text-muted-foreground">
               <Mail size={16} className="shrink-0 text-accent" />
               <span>zach@example.com</span>

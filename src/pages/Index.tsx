@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import LeftAccent from "@/components/LeftAccent";
 import HeroSection from "@/components/HeroSection";
 import MathSection from "@/components/MathSection";
 import DrummingSection from "@/components/DrummingSection";
@@ -7,9 +8,10 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => (
-  <div className="min-h-screen bg-background">
+  <div className="relative min-h-screen bg-background">
+    <LeftAccent />
     <Navigation />
-    <main>
+    <main className="relative z-10">
       <HeroSection />
       <MathSection />
       <DrummingSection />

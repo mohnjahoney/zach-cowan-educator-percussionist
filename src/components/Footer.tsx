@@ -1,6 +1,6 @@
 const Footer = () => (
-  <footer className="border-t px-6 py-12">
-    <p className="text-center text-sm italic text-muted-foreground">
+  <footer className="relative z-10 border-t px-6 py-12">
+    <p className="text-center text-base italic text-muted-foreground">
       Honoring tradition. Strengthening the work.
     </p>
   </footer>

@@ -1,7 +1,9 @@
 const AboutSection = () => (
-  <section id="about" className="border-t px-6 py-20">
+  <section id="about" className="px-6 py-14">
     <div className="mx-auto max-w-4xl space-y-10">
-      <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Meet Zach</h2>
+      <div className="flex items-center gap-4">
+        <h2 className="whitespace-nowrap text-3xl font-bold tracking-tight md:text-4xl">Meet Zach</h2>
+      </div>
 
       {/* Video placeholder */}
       {/* <div className="space-y-2">
@@ -12,7 +14,7 @@ const AboutSection = () => (
       </div> */}
       {/* Meet Zach Video */}
       <div className="space-y-2">
-        <p className="text-sm font-medium text-muted-foreground">
+        <p className="text-base font-medium text-muted-foreground">
           Meet Zach
         </p>
 
@@ -27,8 +29,8 @@ const AboutSection = () => (
         </div>
       </div>
 
-      <p className="max-w-2xl leading-relaxed text-muted-foreground">
-        Zach is an educator and percussionist with over 20 years of apprenticeship in Cuban, Brazilian, and African music traditions. He has spent more than a decade supporting math learners in public school classrooms and now works independently with students and homeschool families. His work bridges rhythm, history, and meaningful learning.
+      <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        Zach has spent more than a decade in public school classrooms and now works independently with homeschool and public school families throughout Chico. He's also a percussionist, apprenticed for over 20 years in Cuban, Brazilian, and West African traditions. Patient, steady, and direct — the same approach carries into both the classroom and the drum circle.
       </p>
     </div>
   </section>

@@ -14,7 +14,11 @@ const Navigation = () => {
   return (
     <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-        <a href="#" className="font-serif text-lg font-semibold text-foreground" style={{ fontFamily: "'Lora', serif" }}>
+        <a
+          href="#"
+          className="font-serif text-lg font-semibold text-foreground underline decoration-accent decoration-2 underline-offset-4"
+          style={{ fontFamily: "'Lora', serif" }}
+        >
           Zach Cowan
         </a>
 
@@ -24,7 +28,7 @@ const Navigation = () => {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {l.label}
               </a>
@@ -51,7 +55,7 @@ const Navigation = () => {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {l.label}
                 </a>
