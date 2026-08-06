@@ -33,12 +33,35 @@ const DrummingSection = () => (
         Rhythm as culture, history, and living community practice.
       </p>
 
-      {/* Video placeholder */}
       <div className="space-y-2">
-        <p className="text-sm font-medium text-muted-foreground">Drumming in Practice</p>
-        <div className="flex aspect-video w-full items-center justify-center rounded-lg border bg-muted text-muted-foreground">
-          <span className="text-sm">Video Embed Placeholder</span>
+        <p className="text-sm font-medium text-muted-foreground">
+          Drumming in Practice
+        </p>
+
+        {/* <div className="overflow-hidden rounded-lg border bg-muted">
+          <video
+            className="w-full aspect-video"
+            controls
+            preload="metadata"
+          >
+            <source
+              src={`${import.meta.env.BASE_URL}videos/test-video.mp4`}
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div> */}
+
+        <div className="overflow-hidden rounded-lg border border-foreground/10 shadow-sm">
+          <iframe
+            className="aspect-video w-full"
+            src="https://www.youtube.com/embed/lkJPK8xrfH0"
+            title="Meet Zach"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
+
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">

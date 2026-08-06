@@ -4,10 +4,26 @@ const AboutSection = () => (
       <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Meet Zach</h2>
 
       {/* Video placeholder */}
-      <div className="space-y-2">
+      {/* <div className="space-y-2">
         <p className="text-sm font-medium text-muted-foreground">Meet Zach</p>
         <div className="flex aspect-video w-full items-center justify-center rounded-lg border bg-muted text-muted-foreground">
           <span className="text-sm">Video Embed Placeholder</span>
+        </div>
+      </div> */}
+      {/* Meet Zach Video */}
+      <div className="space-y-2">
+        <p className="text-sm font-medium text-muted-foreground">
+          Meet Zach
+        </p>
+
+        <div className="overflow-hidden rounded-lg border border-foreground/10 shadow-sm">
+          <iframe
+            className="aspect-video w-full"
+            src="https://www.youtube.com/embed/6eNn59XvcgU"
+            title="Meet Zach"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
 
@@ -19,3 +35,5 @@ const AboutSection = () => (
 );
 
 export default AboutSection;
+
+
