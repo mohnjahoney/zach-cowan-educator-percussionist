@@ -3,8 +3,8 @@ const LeftAccent = () => (
     aria-hidden="true"
     className="pointer-events-none absolute inset-y-0 left-0 z-0 w-full opacity-100"
     style={{
-      // backgroundImage: "url(/images/sycamoreC.jpg)",
-      backgroundImage: "url(/images/zach-portrait.jpg)",
+      // backgroundImage: "url(images/sycamoreC.jpg)",
+      backgroundImage: "url(images/zach-portrait.jpg)",
       backgroundSize: "cover",
       backgroundPosition: "left center",
       // WebkitMaskImage:
