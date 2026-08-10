@@ -28,13 +28,30 @@ const MathSection = () => (
       </p>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <TestimonialCard
-          quote="Zach helped my son rebuild his confidence in math. His calm and structured approach made learning feel manageable again."
-          attribution="Parent, Chico"
+      <TestimonialCard
+          quote="Zach was a teacher at my children's after-school program a few years back.
+Both my son and daughter enjoyed singing and learning with Zach. He always made
+them feel welcome and helped them both learn and grow. Last school year, Zach
+became my son's 8th grade math tutor. Zach helped him to be successful and gain
+straight As in math. Zach took time to get to know him as a learner and person, and my
+son looked forward to his math tutoring sessions. Zach's kind heart, patience, and
+desire to help children learn made a positive impact on my children."
+          attribution="Holly D., homeschool parent, Chico"
         />
         <TestimonialCard
-          quote="Zach teaches the way he lives — thoughtfully, patiently, and with deep respect for the work. Our family has always appreciated his calm presence and steady guidance."
-          attribution="Parent, Chico"
+          quote="Zach has both acted as a teacher and tutor for my son over a 7-year period. Zach has
+always been responsive to my son's needs, offering comfort, encouragement, and
+guidance. He has helped him in his math studies and keeps my son on track to
+complete his homework in a timely manner. He has always checked in with me
+concerning my son's progress in tutoring in the school setting; his interactions with my
+son have been positive and encouraging."
+          attribution="Andie S., homeschool parent"
+        />
+        <TestimonialCard
+          quote="Zach taught music to our children and tutored our daughter privately in drums and
+guitar during the 2024-2025 school year. He was always prepared, respectful, and
+engaging-bringing joy and energy into our home each week."
+          attribution="Julie E., parent of 4 tutoring students"
         />
       </div>
     </div>
