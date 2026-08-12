@@ -32,35 +32,30 @@ const DrummingSection = () => (
         Rhythm as culture, history, and living community practice.
       </p>
 
-      <div className="space-y-2">
-        <p className="text-base font-medium text-muted-foreground">
-          Drumming in Practice
-        </p>
-
-        {/* <div className="overflow-hidden rounded-lg border bg-muted">
+      <div className="grid h-[clamp(24rem,42vw,32rem)] grid-cols-1 gap-4 md:grid-cols-[2fr_3fr] md:gap-5">
+        <div className="overflow-hidden rounded-lg border border-foreground/10 bg-muted shadow-sm">
           <video
-            className="w-full aspect-video"
+            className="h-full w-full object-cover object-center"
             controls
             preload="metadata"
+            poster={`${import.meta.env.BASE_URL}images/hand-drumming-poster.jpg`}
+            aria-label="Zach playing hand drums at an outdoor performance"
           >
             <source
-              src={`${import.meta.env.BASE_URL}videos/test-video.mp4`}
+              src={`${import.meta.env.BASE_URL}videos/hand-drumming.mp4`}
               type="video/mp4"
             />
             Your browser does not support the video tag.
           </video>
-        </div> */}
-
-        <div className="overflow-hidden rounded-lg border border-foreground/10 shadow-sm">
-          <iframe
-            className="aspect-video w-full"
-            src="https://www.youtube.com/embed/lkJPK8xrfH0"
-            title="Meet Zach"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
         </div>
 
+        <div className="overflow-hidden rounded-lg border border-foreground/10 bg-muted shadow-sm">
+          <img
+            className="h-full w-full object-cover object-center"
+            src={`${import.meta.env.BASE_URL}images/drumming-with-marimba.png`}
+            alt="Zach playing congas alongside a marimba player"
+          />
+        </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
