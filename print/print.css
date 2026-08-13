@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap");
+:root { --paper:#f5f0e8; --ink:#252b3c; --muted:#687080; --accent:#9b604d; --green:#5d755e; --line:rgba(37,43,60,.18); --serif:"Lora",Georgia,serif; --sans:"Source Sans 3",Arial,sans-serif; }
+* { box-sizing:border-box; }
+html,body { margin:0; }
+body { background:#d9d4cc; color:var(--ink); font-family:var(--sans); }
+.preview { display:grid; gap:2rem; justify-items:center; padding:2rem; }
+.preview-note { max-width:32rem; color:var(--muted); font-size:.9rem; line-height:1.5; text-align:center; }
+.card-face { position:relative; width:3.5in; height:2in; overflow:hidden; background:#fff; color:var(--ink); }
+.card-face--front::before { position:absolute; inset:calc(.12in - 2px); z-index:0; background:var(--paper); content:""; pointer-events:none; }
+.card-face--front { display:flex; flex-direction:column; justify-content:space-between; padding:.32in .38in; }
+.card-face--front > * { position:relative; z-index:2; }
+.fibonacci-watermark { position:absolute !important; inset:calc(.12in - 2px); z-index:1 !important; width:calc(100% - .24in + 4px); height:calc(100% - .24in + 4px); opacity:1.0; object-fit:fill; pointer-events:none; }
+.card-face--front-wide .fibonacci-watermark { object-fit:cover; }
+.eyebrow,.handout-kicker { color:var(--green); font-size:.08in; font-weight:600; letter-spacing:.14em; text-transform:uppercase; }
+.name { margin:.08in 0 0; font-family:var(--serif); font-size:.28in; font-weight:500; letter-spacing:-.02em; }
+.role { margin:.04in 0 0; color:var(--accent); font-family:var(--serif); font-size:.13in; font-style:italic; }
+.card-description { max-width:2.35in; margin:auto 0 .16in; font-size:.105in; line-height:1.35; }
+.card-contact { display:flex; flex-wrap:wrap; gap:.02in .11in; max-width:2.6in; color:var(--muted); font-size:.075in; line-height:1.35; }
+.card-face--back { display:flex; flex-direction:column; justify-content:center; padding:.28in .42in; background:var(--ink); color:var(--paper); }
+.card-face--back .eyebrow { color:#c5d1b8; } .card-face--back .name { color:var(--paper); font-size:.19in; } .card-face--back .role { color:#d7a08c; }
+.back-copy { max-width:2.45in; margin:.18in 0; font-family:var(--serif); font-size:.115in; line-height:1.45; }
+.traditions { color:#c5d1b8; font-size:.08in; letter-spacing:.08em; text-transform:uppercase; }
+.handout { width:8.5in; min-height:11in; padding:.62in .72in; background:var(--paper); }
+.handout-header { display:flex; align-items:end; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:.28in; }
+.handout h1,.handout h2,.handout h3 { font-family:var(--serif); font-weight:500; } .handout h1 { max-width:4.9in; margin:.1in 0 0; font-size:.48in; line-height:1.05; } .handout h2 { margin:0; color:var(--accent); font-size:.25in; } .handout h3 { margin:0 0 .09in; font-size:.18in; }
+.handout p { font-size:.14in; line-height:1.45; } .handout-intro { max-width:5.5in; margin:.34in 0 .38in; font-family:var(--serif); font-size:.2in; line-height:1.4; }
+.math-panel { display:grid; grid-template-columns:1fr 2.2in; min-height:3.15in; overflow:hidden; background:#ebe5d9; } .math-copy { padding:.38in; } .math-copy p { max-width:3.7in; margin-bottom:.2in; }
+.math-copy ul,.drum-panel ul { margin:0; padding-left:1.1em; font-size:.14in; line-height:1.7; } .handout-photo { min-height:3.15in; background:url("../public/images/zach-portrait.jpg") center/cover; }
+.drum-panel { display:grid; grid-template-columns:2.15in 1fr; gap:.35in; align-items:center; margin-top:.36in; padding:.32in .38in; border-top:1px solid var(--line); border-bottom:1px solid var(--line); } .drum-panel h2 { color:var(--green); } .drum-panel p { margin:0 0 .12in; } .drum-note { font-family:var(--serif); font-style:italic; }
+.handout-footer { display:flex; justify-content:space-between; margin-top:.35in; color:var(--muted); font-size:.11in; }
+@media print { @page { margin:0; } body { background:none; } .preview-note { display:none; } .preview { display:block; padding:0; } .card-face,.handout { break-after:page; } }

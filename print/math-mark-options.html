@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Icosahedron math mark options</title>
+    <link rel="stylesheet" href="./print.css" />
+    <style>
+      body { background:#d9d4cc; }
+      .options { display:grid; grid-template-columns:repeat(2, 3.5in); gap:.35in; padding:.5in; }
+      .option { display:grid; gap:.12in; }
+      .option-label { color:#687080; font:600 .11in/1.2 var(--sans); letter-spacing:.08em; text-transform:uppercase; }
+      .option .card-face { box-shadow:0 8px 24px rgba(37,43,60,.08); }
+      .mark { position:absolute; right:.05in; bottom:.04in; z-index:0; width:1.75in; height:1.13in; overflow:visible; }
+      .card-face--front > :not(.mark) { position:relative; z-index:1; }
+      .mark * { vector-effect:non-scaling-stroke; }
+      .option-1 .mark { color:#252b3c; }
+      .option-2 .mark { color:#5d755e; }
+      .option-3 .mark { color:#252b3c; }
+      .option-4 .mark { color:#9b604d; }
+      @page { size:letter; margin:0; }
+      @media print { body { background:white; } .options { padding:.5in; } .option-label { display:none; } }
+    </style>
+  </head>
+  <body>
+    <main class="options">
+      <section class="option option-1">
+        <div class="option-label">01 · Crisp orbit</div>
+        <div class="card-face card-face--front">
+          <div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div>
+          <p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p>
+          <div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div>
+          <svg class="mark" viewBox="0 0 210 135" fill="none" aria-hidden="true"><defs><linearGradient id="o1a" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#9b604d" stop-opacity="0"/><stop offset=".48" stop-color="#9b604d" stop-opacity=".7"/><stop offset="1" stop-color="#9b604d" stop-opacity="0"/></linearGradient><linearGradient id="o1b"><stop stop-color="#5d755e" stop-opacity=".12"/><stop offset=".5" stop-color="#5d755e" stop-opacity=".7"/><stop offset="1" stop-color="#5d755e" stop-opacity="0"/></linearGradient></defs><g stroke="#252b3c" stroke-width="1" opacity=".72"><path d="M104 17L73 45L82 90L125 108L156 76L143 33Z"/><path d="M104 17L125 108M73 45L156 76M82 90L143 33M104 17L82 90M73 45L125 108M143 33L156 76"/><path d="M73 45L104 17L143 33M82 90L125 108L156 76" opacity=".42"/></g><path d="M19 82C54 18 122 13 193 59" stroke="url(#o1a)" stroke-width="1.8"/><path d="M31 119C78 122 124 93 194 20" stroke="url(#o1b)" stroke-width="1.1"/><path d="M38 37C92 1 148 28 187 103" stroke="#9b604d" stroke-opacity=".38" stroke-width=".9" stroke-dasharray="1 4"/><circle cx="193" cy="59" r="2.3" fill="#9b604d"/><circle cx="31" cy="119" r="1.5" fill="#5d755e"/></svg>
+        </div>
+      </section>
+
+      <section class="option option-2">
+        <div class="option-label">02 · Layered depth</div>
+        <div class="card-face card-face--front">
+          <div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div>
+          <p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p>
+          <div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div>
+          <svg class="mark" viewBox="0 0 210 135" fill="none" aria-hidden="true"><defs><linearGradient id="o2a" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#5d755e" stop-opacity="0"/><stop offset=".5" stop-color="#5d755e" stop-opacity=".6"/><stop offset="1" stop-color="#9b604d" stop-opacity="0"/></linearGradient></defs><g stroke="#5d755e" stroke-width="1" opacity=".28"><path d="M108 11L73 39L79 87L122 112L157 79L147 31Z"/><path d="M108 11L122 112M73 39L157 79M79 87L147 31M108 11L79 87M73 39L122 112M147 31L157 79"/></g><g stroke="#252b3c" stroke-width="1.2" opacity=".6"><path d="M101 23L69 51L86 93L126 101L153 68L139 27Z"/><path d="M101 23L126 101M69 51L153 68M86 93L139 27M101 23L86 93M69 51L126 101M139 27L153 68"/></g><path d="M12 94C52 26 107 31 188 84" stroke="url(#o2a)" stroke-width="2"/><path d="M18 38C80 4 128 18 202 51" stroke="#9b604d" stroke-opacity=".42" stroke-width="1"/><path d="M44 123C90 103 127 57 189 14" stroke="#5d755e" stroke-opacity=".3" stroke-width=".9" stroke-dasharray="2 3"/><circle cx="188" cy="84" r="2.5" fill="#9b604d"/></svg>
+        </div>
+      </section>
+
+      <section class="option option-3">
+        <div class="option-label">03 · Flat construction</div>
+        <div class="card-face card-face--front">
+          <div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div>
+          <p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p>
+          <div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div>
+          <svg class="mark" viewBox="0 0 210 135" fill="none" aria-hidden="true"><g stroke="#252b3c" stroke-width="1" opacity=".72"><path d="M104 17L73 45L82 90L125 108L156 76L143 33Z"/><path d="M104 17L125 108M73 45L156 76M82 90L143 33M104 17L82 90M73 45L125 108M143 33L156 76"/><path d="M104 17L73 45L156 76L143 33L82 90L125 108L104 17Z" opacity=".38"/></g><path d="M22 106H192M35 17V122" stroke="#5d755e" stroke-opacity=".25" stroke-width=".9"/><path d="M29 80C73 79 101 52 131 50C154 48 171 61 195 31" stroke="#9b604d" stroke-opacity=".62" stroke-width="1.6"/><path d="M26 34C73 15 124 18 186 96" stroke="#9b604d" stroke-opacity=".25" stroke-width=".9" stroke-dasharray="1 4"/><circle cx="104" cy="17" r="2" fill="#252b3c" opacity=".65"/></svg>
+        </div>
+      </section>
+
+      <section class="option option-4">
+        <div class="option-label">04 · Ghosted comet</div>
+        <div class="card-face card-face--front">
+          <div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div>
+          <p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p>
+          <div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div>
+          <svg class="mark" viewBox="0 0 210 135" fill="none" aria-hidden="true"><defs><linearGradient id="o4a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9b604d" stop-opacity="0"/><stop offset=".55" stop-color="#9b604d" stop-opacity=".55"/><stop offset="1" stop-color="#9b604d" stop-opacity="0"/></linearGradient></defs><g stroke="#9b604d" stroke-width="1" opacity=".32"><path d="M106 17L73 45L82 90L125 108L156 76L143 33Z"/><path d="M106 17L125 108M73 45L156 76M82 90L143 33M106 17L82 90M73 45L125 108M143 33L156 76"/></g><path d="M15 111C76 126 107 73 193 31" stroke="url(#o4a)" stroke-width="2.2"/><path d="M32 21C91 56 128 62 202 104" stroke="#252b3c" stroke-opacity=".2" stroke-width=".9"/><path d="M17 61C66 13 124 19 187 76" stroke="#9b604d" stroke-opacity=".2" stroke-width=".8" stroke-dasharray="2 4"/><circle cx="15" cy="111" r="3" fill="#9b604d" opacity=".45"/><circle cx="193" cy="31" r="1.5" fill="#9b604d" opacity=".7"/></svg>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

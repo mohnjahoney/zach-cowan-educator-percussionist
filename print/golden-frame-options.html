@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Golden rectangle card options</title>
+    <link rel="stylesheet" href="./print.css" />
+    <style>
+      body { background:#d9d4cc; }
+      .options { display:grid; grid-template-columns:repeat(2, 3.5in); gap:.35in; padding:.5in; }
+      .option { display:grid; gap:.12in; }
+      .option-label { color:#687080; font:600 .11in/1.2 var(--sans); letter-spacing:.08em; text-transform:uppercase; }
+      .option .card-face { box-shadow:0 8px 24px rgba(37,43,60,.08); }
+      .golden-mark { position:absolute; inset:0; z-index:0; width:100%; height:100%; overflow:visible; }
+      .golden-mark * { vector-effect:non-scaling-stroke; }
+      .card-face--front > :not(.golden-mark) { position:relative; z-index:1; }
+      @page { size:letter; margin:0; }
+      @media print { body { background:white; } .options { padding:.5in; } .option-label { display:none; } }
+    </style>
+  </head>
+  <body>
+    <main class="options">
+      <section class="option">
+        <div class="option-label">01 · Quiet frame</div>
+        <div class="card-face card-face--front">
+          <div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div>
+          <p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p>
+          <div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div>
+          <svg class="golden-mark" viewBox="0 0 350 200" fill="none" aria-hidden="true"><defs><linearGradient id="q1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5d755e" stop-opacity=".12"/><stop offset=".72" stop-color="#5d755e" stop-opacity=".38"/><stop offset="1" stop-color="#5d755e" stop-opacity="0"/></linearGradient></defs><rect x="20" y="4" width="310" height="192" stroke="url(#q1)" stroke-width="1"/><path d="M20 196C20 90 103 4 330 4" stroke="#9b604d" stroke-opacity=".46" stroke-width="1.4"/><path d="M20 4V196M20 196H330" stroke="#5d755e" stroke-opacity=".16" stroke-width=".8"/></svg>
+        </div>
+      </section>
+
+      <section class="option">
+        <div class="option-label">02 · Nested construction</div>
+        <div class="card-face card-face--front">
+          <div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div>
+          <p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p>
+          <div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div>
+          <svg class="golden-mark" viewBox="0 0 350 200" fill="none" aria-hidden="true"><rect x="20" y="4" width="310" height="192" stroke="#252b3c" stroke-opacity=".27" stroke-width="1"/><g stroke="#5d755e" stroke-opacity=".22" stroke-width=".8"><path d="M20 4H212V196H20ZM212 4H330V77H212ZM212 77H285V196H212ZM285 77H330V123H285ZM285 123H330V196H285Z"/><path d="M20 4L212 196M212 4L20 196" opacity=".22"/></g><path d="M20 196C20 91 102 4 330 4" stroke="#9b604d" stroke-opacity=".62" stroke-width="1.5"/><path d="M20 4V196M20 196H330" stroke="#252b3c" stroke-opacity=".14" stroke-width=".8"/></svg>
+        </div>
+      </section>
+
+      <section class="option">
+        <div class="option-label">03 · Large spiral</div>
+        <div class="card-face card-face--front">
+          <div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div>
+          <p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p>
+          <div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div>
+          <svg class="golden-mark" viewBox="0 0 350 200" fill="none" aria-hidden="true"><defs><linearGradient id="q3" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#9b604d" stop-opacity="0"/><stop offset=".5" stop-color="#9b604d" stop-opacity=".7"/><stop offset="1" stop-color="#5d755e" stop-opacity=".12"/></linearGradient></defs><rect x="20" y="4" width="310" height="192" stroke="#252b3c" stroke-opacity=".18" stroke-width="1"/><path d="M20 196C20 88 105 4 330 4" stroke="url(#q3)" stroke-width="2"/><path d="M20 4V196M20 196H330" stroke="#252b3c" stroke-opacity=".12" stroke-width=".8"/><path d="M20 196C102 196 173 136 173 70C173 33 145 4 104 4" stroke="#5d755e" stroke-opacity=".24" stroke-width=".9"/></svg>
+        </div>
+      </section>
+
+      <section class="option">
+        <div class="option-label">04 · Full proportion</div>
+        <div class="card-face card-face--front">
+          <div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div>
+          <p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p>
+          <div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div>
+          <svg class="golden-mark" viewBox="0 0 350 200" fill="none" aria-hidden="true"><defs><linearGradient id="q4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9b604d" stop-opacity=".54"/><stop offset=".6" stop-color="#9b604d" stop-opacity=".12"/><stop offset="1" stop-color="#5d755e" stop-opacity=".34"/></linearGradient></defs><rect x="20" y="4" width="310" height="192" stroke="#252b3c" stroke-opacity=".24" stroke-width="1"/><g stroke="#5d755e" stroke-opacity=".2" stroke-width=".8"><path d="M20 4H212V196H20ZM212 4H330V77H212ZM212 77H285V196H212ZM285 77H330V123H285ZM285 123H330V196H285Z"/></g><path d="M20 196C20 90 103 4 330 4" stroke="url(#q4)" stroke-width="1.8"/><path d="M20 196C86 196 129 158 129 105C129 50 87 4 34 4" stroke="#9b604d" stroke-opacity=".28" stroke-width="1"/><circle cx="20" cy="196" r="2.1" fill="#9b604d" fill-opacity=".6"/></svg>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

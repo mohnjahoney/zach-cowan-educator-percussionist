@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Icosahedron math mark options</title>
+    <link rel="stylesheet" href="./print.css" />
+    <style>
+      body { background:#d9d4cc; }
+      .options { display:grid; grid-template-columns:repeat(2, 3.5in); gap:.35in; padding:.5in; }
+      .option { display:grid; gap:.12in; }
+      .option-label { color:#687080; font:600 .11in/1.2 var(--sans); letter-spacing:.08em; text-transform:uppercase; }
+      .option .card-face { box-shadow:0 8px 24px rgba(37,43,60,.08); }
+      .mark { position:absolute; right:-.03in; bottom:-.13in; z-index:0; width:1.82in; height:1.42in; overflow:visible; }
+      .mark svg { display:block; width:100%; height:100%; overflow:visible; }
+      .card-face--front > :not(.mark) { position:relative; z-index:1; }
+      @page { size:letter; margin:0; }
+      @media print { body { background:white; } .options { padding:.5in; } .option-label { display:none; } }
+    </style>
+    <script src="./icosahedron-options.js" defer></script>
+  </head>
+  <body>
+    <main class="options">
+      <section class="option">
+        <div class="option-label">01 · Crisp orbit</div>
+        <div class="card-face card-face--front"><div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div><p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p><div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div><div class="mark" data-icosahedron="crisp"></div></div>
+      </section>
+      <section class="option">
+        <div class="option-label">02 · Layered depth</div>
+        <div class="card-face card-face--front"><div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div><p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p><div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div><div class="mark" data-icosahedron="depth"></div></div>
+      </section>
+      <section class="option">
+        <div class="option-label">03 · Flat construction</div>
+        <div class="card-face card-face--front"><div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div><p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p><div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div><div class="mark" data-icosahedron="flat"></div></div>
+      </section>
+      <section class="option">
+        <div class="option-label">04 · Ghosted comet</div>
+        <div class="card-face card-face--front"><div><h1 class="name">Zach Cowan</h1><p class="role">Math educator</p></div><p class="card-description">Patient, thoughtful math support for homeschool and public school students.</p><div class="card-contact"><span>Chico + online</span><span>[phone]</span><span>[email]</span><span>website</span></div><div class="mark" data-icosahedron="soft"></div></div>
+      </section>
+    </main>
+  </body>
+</html>

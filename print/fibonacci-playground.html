@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fibonacci Spiral Playground</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f5f0e8;
+        --ink: #252b3c;
+        --muted: #687080;
+        --green: #5d755e;
+        --accent: #9b604d;
+        --line: rgba(37, 43, 60, .16);
+        --serif: Georgia, serif;
+        --sans: Arial, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #ded9d1; color: var(--ink); font-family: var(--sans); }
+      .app { display: grid; grid-template-columns: 18rem minmax(0, 1fr); min-height: 100vh; }
+      aside { padding: 2rem 1.5rem; background: var(--paper); border-right: 1px solid var(--line); }
+      h1 { margin: 0 0 .35rem; font: 500 1.45rem/1.1 var(--serif); }
+      .intro { margin: 0 0 1.6rem; color: var(--muted); font-size: .85rem; line-height: 1.45; }
+      fieldset { margin: 0 0 1.1rem; padding: 0; border: 0; }
+      label { display: flex; justify-content: space-between; gap: .8rem; margin-bottom: .35rem; color: var(--ink); font-size: .8rem; font-weight: 600; }
+      input[type="number"] { width: 5.5rem; padding: .38rem .45rem; border: 1px solid var(--line); border-radius: .25rem; background: #fffdf8; color: var(--ink); font: inherit; text-align: right; }
+      input[type="range"] { width: 100%; accent-color: var(--accent); }
+      .hint { margin: .35rem 0 0; color: var(--muted); font-size: .7rem; line-height: 1.35; }
+      .readout { margin: 1.5rem 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; line-height: 1.7; }
+      .readout strong { color: var(--ink); font-weight: 600; }
+      button { width: 100%; margin-top: .5rem; padding: .6rem .75rem; border: 1px solid var(--ink); border-radius: .25rem; background: var(--ink); color: var(--paper); cursor: pointer; font: 600 .78rem var(--sans); }
+      button.secondary { background: transparent; color: var(--ink); }
+      main { display: grid; place-items: center; padding: 2rem; }
+      .figure-wrap { width: min(100%, 1000px); }
+      .figure-wrap p { margin: 0 0 .65rem; color: var(--muted); font-size: .75rem; }
+      svg { display: block; width: 100%; height: auto; background: white; box-shadow: 0 1rem 3rem rgba(37, 43, 60, .12); }
+      .outer { fill: none; stroke: var(--ink); stroke-width: 3; }
+      .construction rect { fill: none; stroke: var(--green); stroke-width: 2; }
+      .construction circle { fill: none; stroke: var(--accent); stroke-width: 2; }
+      .spiral { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      @media (max-width: 700px) {
+        .app { grid-template-columns: 1fr; }
+        aside { border-right: 0; border-bottom: 1px solid var(--line); }
+        main { padding: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <aside>
+        <h1>Fibonacci spiral</h1>
+        <p class="intro">Live construction playground. The full square sequence determines the spiral center; only the requested number of construction levels is drawn.</p>
+
+        <fieldset>
+          <label for="depth">DEPTH <input id="depth" type="number" min="1" max="24" step="1" value="12"></label>
+          <input data-sync="depth" type="range" min="1" max="24" step="1" value="12">
+        </fieldset>
+
+        <fieldset>
+          <label for="depthToRender">DEPTH-TO-RENDER <input id="depthToRender" type="number" min="0" max="24" step="1" value="12"></label>
+          <input data-sync="depthToRender" type="range" min="0" max="24" step="1" value="12">
+        </fieldset>
+
+        <fieldset>
+          <label for="spiralStart">SPIRAL-START-PARAM <input id="spiralStart" type="number" min="-24" max="24" step=".25" value="-2.5"></label>
+          <input data-sync="spiralStart" type="range" min="-24" max="24" step=".25" value="-2.5">
+          <p class="hint">Quarter-turn parameter. 1 unit = 90° of spiral growth.</p>
+        </fieldset>
+
+        <fieldset>
+          <label for="spiralEnd">SPIRAL-END-PARAM <input id="spiralEnd" type="number" min="-24" max="24" step=".25" value="10"></label>
+          <input data-sync="spiralEnd" type="range" min="-24" max="24" step=".25" value="10">
+        </fieldset>
+
+        <fieldset>
+          <label for="angleAdjustment">SPIRAL-ANGLE-ADJUSTMENT <input id="angleAdjustment" type="number" min="-360" max="360" step="1" value="-170"></label>
+          <input data-sync="angleAdjustment" type="range" min="-360" max="360" step="1" value="-170">
+          <p class="hint">Degrees. Negative values rotate clockwise in SVG coordinates.</p>
+        </fieldset>
+
+        <div class="readout">
+          PHI: <strong id="phiReadout"></strong><br>
+          Spiral center: <strong id="centerReadout"></strong><br>
+          Rendered levels: <strong id="renderReadout"></strong>
+        </div>
+        <button id="download">Download SVG</button>
+        <button id="reset" class="secondary">Reset controls</button>
+      </aside>
+
+      <main>
+        <div class="figure-wrap">
+          <p>Live preview · spiral uses the same treatment as the construction lines</p>
+          <svg id="figure" viewBox="0 0 1000 618.034" role="img" aria-labelledby="title description">
+            <title id="title">Golden-ratio rectangle and Fibonacci spiral</title>
+            <desc id="description">Interactive golden-ratio square and circle construction.</desc>
+            <rect class="outer" x="0" y="0" width="1000" height="618.034"></rect>
+            <g id="rectangles" class="construction rectangles"></g>
+            <path id="spiral" class="spiral"></path>
+            <!-- Circle layer intentionally hidden for now; retain the live code below for easy restoration. -->
+            <!-- <g id="circles" class="construction circles"></g> -->
+          </svg>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const PHI = (1 + Math.sqrt(5)) / 2;
+      const WIDTH = 1000;
+      const HEIGHT = WIDTH / PHI;
+      const SPIRAL_POINTS = 200;
+      const defaults = { depth: 12, depthToRender: 12, spiralStart: -2.5, spiralEnd: 10, angleAdjustment: -170 };
+      const $ = (id) => document.getElementById(id);
+
+      function buildSquares(depth) {
+        let x = 0, y = 0, width = WIDTH, height = HEIGHT;
+        const squares = [];
+        for (let level = 0; level < depth; level += 1) {
+          const side = Math.min(width, height);
+          const direction = level % 4;
+          if (direction === 0) { squares.push({ x, y, side, level }); x += side; width -= side; }
+          else if (direction === 1) { squares.push({ x, y, side, level }); y += side; height -= side; }
+          else if (direction === 2) { const squareX = x + width - side; squares.push({ x: squareX, y, side, level }); width -= side; }
+          else { const squareY = y + height - side; squares.push({ x, y: squareY, side, level }); height -= side; }
+        }
+        return squares;
+      }
+
+      function render() {
+        const depth = Math.max(1, Math.round(Number($("depth").value)));
+        const depthToRender = Math.min(depth, Math.max(0, Math.round(Number($("depthToRender").value))));
+        const start = Number($("spiralStart").value);
+        const end = Number($("spiralEnd").value);
+        const angle = Number($("angleAdjustment").value) * Math.PI / 180;
+        const squares = buildSquares(depth);
+        const anchor = squares[squares.length - 1];
+        const center = { x: anchor.x + anchor.side / 2, y: anchor.y + anchor.side / 2 };
+        const radiusAtStart = 8 * PHI ** start;
+        const points = Array.from({ length: SPIRAL_POINTS }, (_, index) => {
+          const t = start + (end - start) * index / (SPIRAL_POINTS - 1);
+          const theta = t * Math.PI / 2;
+          const radius = 8 * PHI ** t;
+          const x = center.x + radius * Math.cos(-theta + angle);
+          const y = center.y + radius * Math.sin(-theta + angle);
+          return `${index === 0 ? "M" : "L"}${x.toFixed(3)} ${y.toFixed(3)}`;
+        }).join(" ");
+        $("spiral").setAttribute("d", points);
+        const renderedSquares = squares.slice(0, depthToRender);
+        $("rectangles").innerHTML = renderedSquares.map(({ x, y, side, level }) => `<rect data-depth="${level}" x="${x.toFixed(3)}" y="${y.toFixed(3)}" width="${side.toFixed(3)}" height="${side.toFixed(3)}"></rect>`).join("");
+        // $("circles").innerHTML = renderedSquares.map(({ x, y, side, level }) => `<circle data-depth="${level}" cx="${(x + side / 2).toFixed(3)}" cy="${(y + side / 2).toFixed(3)}" r="${(side / 2).toFixed(3)}"></circle>`).join("");
+        $("phiReadout").textContent = PHI.toFixed(9);
+        $("centerReadout").textContent = `${center.x.toFixed(2)}, ${center.y.toFixed(2)}`;
+        $("renderReadout").textContent = `${depthToRender} of ${depth}`;
+      }
+
+      function sync(source) {
+        const target = source.dataset.sync ? $(source.dataset.sync) : document.querySelector(`[data-sync="${source.id}"]`);
+        if (target) target.value = source.value;
+        render();
+      }
+
+      document.querySelectorAll("input[type=number], input[type=range]").forEach((input) => input.addEventListener("input", () => sync(input)));
+      $("reset").addEventListener("click", () => { Object.entries(defaults).forEach(([id, value]) => { $(id).value = value; document.querySelector(`[data-sync="${id}"]`).value = value; }); render(); });
+      $("download").addEventListener("click", () => {
+        const svg = $("figure").cloneNode(true);
+        svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+        const source = `<?xml version="1.0" encoding="UTF-8"?>\n${new XMLSerializer().serializeToString(svg)}`;
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(new Blob([source], { type: "image/svg+xml" }));
+        link.download = "fibonacci-spiral-playground.svg";
+        link.click();
+        URL.revokeObjectURL(link.href);
+      });
+      render();
+    </script>
+  </body>
+</html>
